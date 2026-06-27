@@ -1,0 +1,572 @@
+@import url('https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700&display=swap');
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Plus Jakarta Sans', sans-serif;
+    scroll-behavior: smooth;
+    -webkit-font-smoothing: antialiased;
+}
+
+body {
+    background-color: #FDFBF7;
+    color: #111111;
+    overflow-x: hidden;
+}
+
+.container {
+    width: 100%;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 24px;
+}
+
+/* ==========================================
+   PREMIUM GLASS NAVIGATION
+   ========================================== */
+.navbar {
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+    background: rgba(253, 251, 247, 0.75);
+    backdrop-filter: blur(20px);
+    -webkit-backdrop-filter: blur(20px);
+    border-bottom: 1px solid rgba(17, 17, 17, 0.04);
+    transition: all 0.3s ease;
+}
+
+.nav-container {
+    max-width: 1300px;
+    margin: 0 auto;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 20px 24px;
+}
+
+.nav-logo {
+    height: 38px;
+    object-fit: contain;
+}
+
+.nav-menu {
+    display: flex;
+    gap: 40px;
+}
+
+.nav-item {
+    text-decoration: none;
+    color: #111111;
+    font-weight: 500;
+    font-size: 15px;
+    position: relative;
+    padding: 4px 0;
+    transition: color 0.3s ease;
+}
+
+.nav-item::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    height: 2px;
+    background-color: #FF6B00;
+    transform: scaleX(0);
+    transform-origin: right;
+    transition: transform 0.45s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.nav-item:hover::after {
+    transform: scaleX(1);
+    transform-origin: left;
+}
+
+/* ==========================================
+   DYNAMIC INTERACTIVE BUTTONS
+   ========================================== */
+.cta-btn {
+    display: inline-block;
+    text-decoration: none;
+    font-weight: 600;
+    font-size: 14px;
+    padding: 14px 28px;
+    border-radius: 100px;
+    transition: all 0.5s cubic-bezier(0.16, 1, 0.3, 1);
+    cursor: pointer;
+    border: none;
+    position: relative;
+    overflow: hidden;
+    box-shadow: 0 4px 12px rgba(255, 107, 0, 0.1);
+}
+
+.primary-cta {
+    background-color: #FF6B00;
+    color: #FFFFFF;
+}
+
+.primary-cta:hover {
+    background-color: #111111;
+    box-shadow: 0 12px 24px rgba(17, 17, 17, 0.15);
+    transform: translateY(-3px);
+}
+
+.secondary-cta {
+    background-color: transparent;
+    color: #111111;
+    border: 1px solid rgba(17, 17, 17, 0.12);
+    box-shadow: none;
+}
+
+.secondary-cta:hover {
+    background-color: #111111;
+    color: #FFFFFF;
+    border-color: #111111;
+    transform: translateY(-3px);
+}
+
+.large-cta {
+    padding: 18px 38px;
+    font-size: 16px;
+}
+
+/* ==========================================
+   FLUID HERO LAYER
+   ========================================== */
+.hero-section {
+    padding: 160px 0 100px 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    min-height: 85vh;
+    background: radial-gradient(circle at 50% 20%, rgba(255, 107, 0, 0.04) 0%, transparent 60%);
+}
+
+.hero-badge {
+    display: inline-block;
+    font-size: 12px;
+    text-transform: uppercase;
+    letter-spacing: 0.12em;
+    background: rgba(255, 107, 0, 0.08);
+    color: #FF6B00;
+    padding: 8px 20px;
+    border-radius: 100px;
+    font-weight: 600;
+    margin-bottom: 32px;
+}
+
+.hero-title {
+    font-size: 68px;
+    font-weight: 700;
+    line-height: 1.1;
+    letter-spacing: -0.04em;
+    max-width: 950px;
+    margin: 0 auto 28px auto;
+}
+
+.hero-subtitle {
+    font-size: 21px;
+    color: #555555;
+    max-width: 700px;
+    margin: 0 auto 48px auto;
+    line-height: 1.6;
+    font-weight: 400;
+}
+
+.hero-ctas {
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+}
+
+/* ==========================================
+   EDITORIAL ASYMMETRICAL SECTION
+   ========================================== */
+.asymmetrical-grid {
+    display: grid;
+    grid-template-columns: 1.1fr 0.9fr;
+    gap: 100px;
+    padding: 140px 0;
+    align-items: start;
+}
+
+.section-label {
+    color: #FF6B00;
+    font-size: 14px;
+    text-transform: uppercase;
+    letter-spacing: 0.12em;
+    margin-bottom: 20px;
+    font-weight: 600;
+}
+
+.about-headline {
+    font-size: 44px;
+    letter-spacing: -0.03em;
+    line-height: 1.25;
+    font-weight: 700;
+}
+
+.about-body {
+    font-size: 20px;
+    color: #444444;
+    line-height: 1.75;
+    font-weight: 400;
+}
+
+/* ==========================================
+   KINETIC REVIEWS GRID (PERSPECTIVE LOOK)
+   ========================================== */
+.reviews-section {
+    background-color: #111111;
+    color: #FFFFFF;
+    padding: 140px 0;
+    position: relative;
+}
+
+.reviews-section .section-title {
+    color: #FFFFFF;
+}
+
+.center-header {
+    text-align: center;
+    margin-bottom: 80px;
+}
+
+.reviews-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 32px;
+    perspective: 1000px;
+}
+
+.review-wrapper {
+    background: #1A1A1A;
+    border: 1px solid rgba(255, 255, 255, 0.05);
+    border-radius: 24px;
+    padding: 24px;
+    transition: transform 0.5s cubic-bezier(0.16, 1, 0.3, 1), background 0.3s ease, box-shadow 0.5s ease;
+    cursor: pointer;
+    transform-style: preserve-3d;
+}
+
+.review-wrapper:hover {
+    transform: translateY(-12px) scale(1.02) rotateX(4deg) rotateY(-2px);
+    background: #222222;
+    box-shadow: 0 30px 60px rgba(0, 0, 0, 0.4), 0 0 40px rgba(255, 107, 0, 0.1);
+    border-color: rgba(255, 107, 0, 0.2);
+}
+
+.screenshot-review {
+    width: 100%;
+    border-radius: 14px;
+    object-fit: contain;
+    background: #000;
+    border: 1px solid rgba(255,255,255,0.08);
+}
+
+.review-card-meta {
+    margin-top: 20px;
+    border-top: 1px solid rgba(255, 255, 255, 0.08);
+    padding-top: 16px;
+}
+
+.review-card-meta h4 {
+    font-size: 16px;
+    font-weight: 600;
+    color: #FFFFFF;
+}
+
+.review-date {
+    font-size: 13px;
+    color: #888888;
+    margin-top: 4px;
+}
+
+/* ==========================================
+   INTERACTIVE SPLIT CONTACT ENGINE
+   ========================================== */
+.contact-section {
+    padding: 140px 24px;
+}
+
+.contact-split-grid {
+    display: grid;
+    grid-template-columns: 1.12fr 0.88fr;
+    gap: 96px;
+    align-items: center;
+}
+
+.contact-main-title {
+    font-size: 48px;
+    font-weight: 700;
+    letter-spacing: -0.03em;
+    line-height: 1.2;
+    margin-bottom: 24px;
+    color: #111111;
+}
+
+.contact-editorial-body {
+    font-size: 18px;
+    color: #555555;
+    line-height: 1.7;
+    max-width: 500px;
+    margin-bottom: 48px;
+}
+
+/* Tactile Action Cards */
+.premium-action-channels {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+.action-channel-card {
+    display: flex;
+    align-items: center;
+    gap: 20px;
+    text-decoration: none;
+    background: #FFFFFF;
+    padding: 20px 24px;
+    border-radius: 16px;
+    border: 1px solid rgba(17, 17, 17, 0.04);
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.01);
+    transition: all 0.4s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.action-channel-card:hover {
+    transform: translateX(8px);
+    border-color: rgba(255, 107, 0, 0.2);
+    box-shadow: 0 12px 30px rgba(255, 107, 0, 0.05);
+}
+
+.channel-icon-wrap {
+    font-size: 22px;
+    width: 48px;
+    height: 48px;
+    background: #FAFAFA;
+    border-radius: 12px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: background 0.3s ease;
+}
+
+.action-channel-card:hover .channel-icon-wrap {
+    background: rgba(255, 107, 0, 0.08);
+}
+
+.channel-details h4 {
+    font-size: 16px;
+    font-weight: 600;
+    color: #111111;
+}
+
+.channel-details p {
+    font-size: 13px;
+    color: #777777;
+    margin-top: 2px;
+}
+
+/* Floating Label Minimalist Intake Form */
+.contact-form-wrapper {
+    background: #FFFFFF;
+    padding: 56px;
+    border-radius: 28px;
+    border: 1px solid rgba(17, 17, 17, 0.04);
+    box-shadow: 0 30px 60px rgba(0,0,0,0.02);
+}
+
+.interactive-input-group {
+    position: relative;
+    margin-bottom: 36px;
+}
+
+.interactive-input-group input,
+.interactive-input-group textarea {
+    width: 100%;
+    padding: 16px 4px 10px 4px;
+    border: none;
+    border-bottom: 1px solid rgba(17, 17, 17, 0.15);
+    background: transparent;
+    font-size: 16px;
+    color: #111111;
+    transition: border-color 0.3s ease;
+}
+
+.interactive-input-group textarea {
+    resize: none;
+}
+
+.interactive-input-group input:focus,
+.interactive-input-group textarea:focus {
+    outline: none;
+    border-bottom-color: #FF6B00;
+}
+
+/* Floating Label Animation Physics */
+.interactive-input-group label {
+    position: absolute;
+    left: 4px;
+    top: 16px;
+    color: #777777;
+    font-size: 15px;
+    pointer-events: none;
+    transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.interactive-input-group input:focus ~ label,
+.interactive-input-group input:not(:placeholder-shown) ~ label,
+.interactive-input-group textarea:focus ~ label,
+.interactive-input-group textarea:not(:placeholder-shown) ~ label {
+    top: -12px;
+    font-size: 12px;
+    font-weight: 700;
+    color: #FF6B00;
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+}
+
+.operational-submit-btn {
+    width: 100%;
+    border-radius: 12px !important;
+    text-align: center;
+}
+
+/* ==========================================
+   CORPORATE FOOTER DESIGN
+   ========================================== */
+.corporate-footer {
+    background-color: #0A0A0A;
+    color: #FFFFFF;
+    padding: 100px 0 40px 0;
+    border-top: 1px solid rgba(255, 255, 255, 0.05);
+}
+
+.footer-grid {
+    display: grid;
+    grid-template-columns: 1.1fr 0.9fr;
+    gap: 80px;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+    padding-bottom: 64px;
+}
+
+.footer-logo {
+    height: 42px;
+    object-fit: contain;
+    margin-bottom: 24px;
+}
+
+.footer-tagline {
+    color: #888888;
+    font-size: 16px;
+    max-width: 320px;
+    line-height: 1.6;
+}
+
+.footer-newsletter h4 {
+    font-size: 20px;
+    margin-bottom: 12px;
+    font-weight: 600;
+}
+
+.footer-newsletter p {
+    color: #888888;
+    font-size: 15px;
+    margin-bottom: 24px;
+}
+
+.newsletter-input-wrap {
+    display: flex;
+    gap: 14px;
+}
+
+.newsletter-input-wrap input {
+    flex: 1;
+    padding: 18px;
+    border-radius: 12px;
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    background: rgba(255, 255, 255, 0.03);
+    color: #FFFFFF;
+    font-size: 15px;
+    transition: border-color 0.3s ease;
+}
+
+.newsletter-input-wrap input:focus {
+    outline: none;
+    border-color: #FF6B00;
+}
+
+.newsletter-input-wrap button {
+    background: #FF6B00;
+    color: #FFFFFF;
+    border: none;
+    padding: 0 32px;
+    border-radius: 12px;
+    font-weight: 600;
+    cursor: pointer;
+    transition: background 0.3s ease;
+}
+
+.newsletter-input-wrap button:hover {
+    background: #E05E00;
+}
+
+.footer-bottom {
+    display: flex;
+    justify-content: space-between;
+    padding-top: 48px;
+    font-size: 14px;
+    color: #555555;
+}
+
+.footer-legal-links a {
+    color: #555555;
+    text-decoration: none;
+    margin-left: 28px;
+    transition: color 0.3s ease;
+}
+
+.footer-legal-links a:hover {
+    color: #FF6B00;
+}
+
+/* ==========================================
+   FLUID ENTRY ENGINE CONTROLLER (THE VIBE)
+   ========================================== */
+.animate-reveal {
+    opacity: 0;
+    transform: translateY(40px) scale(0.98);
+    transition: opacity 1.2s cubic-bezier(0.16, 1, 0.3, 1), transform 1.2s cubic-bezier(0.16, 1, 0.3, 1);
+    will-change: transform, opacity;
+}
+
+.animate-reveal.visible {
+    opacity: 1;
+    transform: translateY(0) scale(1);
+}
+
+/* ==========================================
+   MOBILE RESPONSIVENESS ARCHITECTURE
+   ========================================== */
+@media(max-width: 992px) {
+    .asymmetrical-grid, .footer-grid, .contact-split-grid {
+        grid-template-columns: 1fr;
+        gap: 64px;
+    }
+    .reviews-grid {
+        grid-template-columns: 1fr;
+        gap: 32px;
+    }
+    .hero-title { font-size: 46px; }
+    .contact-main-title { font-size: 38px; }
+    .contact-form-wrapper { padding: 40px; }
+}
+
+@media(max-width: 768px) {
+    .nav-menu { display: none; }
+    .hero-title { font-size: 38px; }
+    .hero-subtitle { font-size: 18px; }
+    .asymmetrical-grid { padding: 80px 0; }
+}

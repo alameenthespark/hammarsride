@@ -499,7 +499,80 @@
 
         function matchRiderToOrder(orderId, riderId) { let orders = JSON.parse(localStorage.getItem('hamars_system_orders')) || []; let fleet = JSON.parse(localStorage.getItem('hamars_riders')) || []; let r = fleet.find(x => x.id === riderId); let idx = orders.findIndex(o => o.id === orderId); if(idx !== -1 && r) { orders[idx].rider = r.name; localStorage.setItem('hamars_system_orders', JSON.stringify(orders)); window.open(`https://api.whatsapp.com/send?phone=${r.phone}&text=${encodeURIComponent('⚡ Dispatch Assignment ' + orders[idx].id + '\nRoute to: ' + orders[idx].destination)}`, '_blank'); renderLiveOrders(); } }
         function resolveOrderDelivery(id) { let orders = JSON.parse(localStorage.getItem('hamars_system_orders')) || []; let idx = orders.findIndex(o => o.id === id); if(idx !== -1) { orders[idx].status = 'Completed'; localStorage.setItem('hamars_system_orders', JSON.stringify(orders)); renderLiveOrders(); } }
-        function renderFleetMatrix() { const b = document.getElementById('fleet-table-body'); b.innerHTML = ''; const fleet = JSON.parse(localStorage.getItem('hamars_riders')) || []; fleet.forEach(r => { b.innerHTML += `<tr><td class="p-4 font-bold">${r.name}</td><td class="p-4 font-mono">${r.phone}</td><td class="p-4"><span class="px-2 py-0.5 rounded-full text-[10px] font-bold bg-emerald-50 text-emerald-600">${r.status}</span></td><td class="p-4 text-right"><button onclick="deregisterRider('${r.id}')" class="text-rose-500 font-bold">Delete</button></td></tr>`; }); renderExecutiveDashboard(); }
+        // ================= SYNCHRONIZED FLEET AND APPROVAL MATRIX =================
+        function renderFleetMatrix() {
+            const tableBody = document.getElementById('fleet-table-body');
+            tableBody.innerHTML = '';
+            
+            // Pull the shared riders list from localStorage
+            const fleet = JSON.parse(localStorage.getItem('hamars_riders')) || [];
+            
+            if (fleet.length === 0) {
+                tableBody.innerHTML = '<tr><td colspan="5" class="p-4 text-slate-400 italic">No riders registered in system memory.</td></tr>';
+                return;
+            }
+
+            // Build headers dynamically if needed, or clear inner structure
+            tableBody.innerHTML = `
+                <tr class="bg-slate-50 text-slate-400 font-bold border-b text-[10px] uppercase tracking-wider">
+                    <th class="p-4">Rider Profile</th>
+                    <th class="p-4">Contact Logic</th>
+                    <th class="p-4">Duty State</th>
+                    <th class="p-4">System Verification</th>
+                    <th class="p-4 text-right">Actions</th>
+                </tr>
+            `;
+
+            fleet.forEach(rider => {
+                // Handle approval badges and action buttons dynamically
+                const statusBadge = rider.approved 
+                    ? `<span class="px-2 py-0.5 rounded-full text-[10px] font-bold bg-emerald-50 text-emerald-600 border border-emerald-200">Verified Partner</span>`
+                    : `<span class="px-2 py-0.5 rounded-full text-[10px] font-bold bg-amber-50 text-amber-600 border border-amber-200 animate-pulse">Pending Approval</span>`;
+                    
+                const actionButton = rider.approved
+                    ? `<button onclick="toggleRiderApproval('${rider.id}', false)" class="text-amber-600 font-bold hover:underline mr-4">Suspend</button>`
+                    : `<button onclick="toggleRiderApproval('${rider.id}', true)" class="text-emerald-600 font-bold hover:underline mr-4">Approve Application</button>`;
+
+                const dutyStateBadge = rider.status === 'Available'
+                    ? `<span class="text-emerald-500 font-medium">🟢 Available</span>`
+                    : `<span class="text-amber-500 font-medium">⚡ ${rider.status || 'Offline'}</span>`;
+
+                tableBody.innerHTML += `
+                    <tr class="hover:bg-slate-50/40 transition">
+                        <td class="p-4">
+                            <p class="font-bold text-slate-900">${rider.name}</p>
+                            <p class="text-[10px] text-slate-400 font-mono">${rider.id}</p>
+                        </td>
+                        <td class="p-4">
+                            <p class="font-medium text-slate-700">${rider.email}</p>
+                            <p class="text-[10px] text-slate-400 font-mono">${rider.phone}</p>
+                        </td>
+                        <td class="p-4 text-xs font-semibold">${dutyStateBadge}</td>
+                        <td class="p-4">${statusBadge}</td>
+                        <td class="p-4 text-right text-xs">
+                            ${actionButton}
+                            <button onclick="deregisterRider('${rider.id}')" class="text-rose-500 font-bold hover:underline">Purge</button>
+                        </td>
+                    </tr>`;
+            });
+            if (typeof renderExecutiveDashboard === "function") {
+                renderExecutiveDashboard();
+            }
+        }
+
+        // --- ADMINISTRATIVE APPROVAL SYSTEM SWITCH ---
+        function toggleRiderApproval(riderId, approvalState) {
+            let fleet = JSON.parse(localStorage.getItem('hamars_riders')) || [];
+            let idx = fleet.findIndex(r => r.id === riderId);
+            
+            if (idx !== -1) {
+                fleet[idx].approved = approvalState;
+                localStorage.setItem('hamars_riders', JSON.stringify(fleet));
+                alert(`Fleet verification parameter modified successfully for ${fleet[idx].name}.`);
+                renderFleetMatrix();
+            }
+        }
+
         function registerRiderToFleet() { const name = document.getElementById('new-rider-name').value.trim(), phone = document.getElementById('new-rider-phone').value.trim(); if(!name || !phone) return; let fleet = JSON.parse(localStorage.getItem('hamars_riders')) || []; fleet.push({ id: 'R-' + Date.now(), name, phone, status: 'Available' }); localStorage.setItem('hamars_riders', JSON.stringify(fleet)); document.getElementById('new-rider-name').value = ''; document.getElementById('new-rider-phone').value = ''; renderFleetMatrix(); }
         function deregisterRider(id) { let fleet = JSON.parse(localStorage.getItem('hamars_riders')) || []; fleet = fleet.filter(r => r.id !== id); localStorage.setItem('hamars_riders', JSON.stringify(fleet)); renderFleetMatrix(); }
     </script>

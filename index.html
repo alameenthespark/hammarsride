@@ -33,7 +33,7 @@
             <p class="hero-subtitle">Reliable delivery, transportation, and errand services engineered around the everyday needs of students, small businesses, and young professionals.</p>
             <div class="hero-ctas">
                 <a href="order.html" class="cta-btn primary-cta large-cta">Start an Order</a>
-                <a href="onboard.html" class="cta-btn secondary-cta large-cta">Partner With Us</a>
+                <a href="rider-portal.html" class="cta-btn secondary-cta large-cta">Partner With Us</a>
             </div>
         </div>
     </section>
@@ -177,8 +177,9 @@
         <div class="container footer-bottom">
             <p class="copyright">&copy; 2026 Hamars Ride. All rights reserved.</p>
             <div class="footer-legal-links">
-                <a href="https://www.tiktok.com/@hamarsrideofficial" target="_blank" class="legal-item">TikTok</a>
-                <a href="legal.html#privacy" class="legal-item">Privacy Policy</a>
+                <a href="https://www.tiktok.com/@hamarsride?_r=1&_t=ZS-97Wqa1Dz1gG" target="_blank" class="legal-item">TikTok</a>
+                <a href="https://www.instagram.com/hamarsdelivery_ng?utm_source=qr&igsh=MTJrdDY4aWgycWMweA%3D%3D" target="_blank" class="legal-item">Instagram</a>
+                <a href="javascript:void(0)" onclick="toggleTermsModal(true)" class="legal-item">Terms of Service</a>
                 <a href="legal.html#data" class="legal-item">Data Policy</a>
             </div>
         </div>
@@ -227,5 +228,183 @@
 <script src="asset/js/menu-data.js"></script>
 <script src="asset/js/app.js"></script>
     <script src="asset/css/js/app.js"></script>
+
+    <!-- Terms of Service Modal Overlay -->
+    <div id="terms-modal" style="display: none;" class="fixed inset-0 z-[100] flex items-center justify-center p-4 bg-slate-900/60 backdrop-blur-sm">
+        <div class="bg-white w-full max-w-3xl h-[85vh] flex flex-col rounded-2xl shadow-2xl overflow-hidden animate-in fade-in zoom-in-95 duration-200">
+            <!-- Header -->
+            <div class="p-6 border-b flex justify-between items-center bg-slate-50">
+                <div>
+                    <h3 class="text-lg font-bold text-slate-900">Hamars Ride — Terms of Service</h3>
+                    <p class="text-[11px] text-slate-400 font-medium mt-0.5">Version 1.0 (Initial Launch) | Effective Date: [To be set on launch day]</p>
+                </div>
+                <button onclick="toggleTermsModal(false)" class="text-slate-400 hover:text-slate-600 font-bold text-xl p-2">&times;</button>
+            </div>
+            
+            <!-- Document Body Container -->
+            <div class="p-8 overflow-y-auto text-xs text-slate-600 space-y-6 leading-relaxed bg-white font-normal">
+                <p>Welcome to Hamars Ride. By creating an account or placing an order through our platform, you agree to these Terms of Service. Please read them carefully. If you do not agree with any part of these terms, you should not use the platform.</p>
+                <p>These terms are written in plain language to be clear, but they form a legal agreement between you ("the Customer", "you") and Hamars Ride Logistics ("Hamars Ride", "we", "our", "the platform").</p>
+                
+                <hr class="border-slate-100" />
+
+                <div>
+                    <h4 class="font-bold text-slate-900 uppercase tracking-wider text-[10px] mb-2">1. About Hamars Ride</h4>
+                    <p>Hamars Ride is a logistics and on-demand services platform operating in Offa, Ilorin, and other cities where the service is made available. We connect customers with partner riders, restaurants, and vendors to facilitate the safe and timely movement of goods and meals.</p>
+                    <p class="mt-2 font-semibold text-slate-800">Services launching at this version:</p>
+                    <ul class="list-disc pl-4 mt-1 space-y-1">
+                        <li>Food Delivery - orders from partner restaurants</li>
+                        <li>Parcel Delivery - point-to-point package movement</li>
+                    </ul>
+                    <p class="mt-2 font-semibold text-slate-800">Services coming in future phases:</p>
+                    <p>The platform will be expanded to include Grocery Shopping, Laundry, Market Errand, and Ride Booking services. These will be progressively rolled out, with availability communicated through the platform and via our usual channels. Each new service will, when launched, be governed by these Terms of Service together with any additional terms specific to that service.</p>
+                    <p class="mt-2">Hamars Ride acts as an intermediary that coordinates these services. We do not own the vehicles, prepare the food, or provide the riding services directly—those are provided by independent partners who operate through our platform.</p>
+                </div>
+
+                <div>
+                    <h4 class="font-bold text-slate-900 uppercase tracking-wider text-[10px] mb-2">2. Account Registration</h4>
+                    <p class="font-semibold text-slate-800">2.1 Eligibility</p>
+                    <p>You must be at least 18 years old to create an account on Hamars Ride. By signing up, you confirm that you meet this age requirement.</p>
+                    <p class="mt-2 font-semibold text-slate-800">2.2 Accurate Information</p>
+                    <p>You agree to provide accurate, current, and complete information during sign-up—including your full name, phone number, city, and a valid email address. You agree to keep this information updated.</p>
+                    <p class="mt-2 font-semibold text-slate-800">2.3 Account Security</p>
+                    <p>You are responsible for safeguarding your password and any activity that happens under your account. If you suspect someone has accessed your account without permission, you must notify Hamars Ride immediately at [support contact].</p>
+                    <p class="mt-2 font-semibold text-slate-800">2.4 One Account Per Person</p>
+                    <p>You may only maintain one customer account on the platform. Creating multiple accounts to abuse promotions, evade restrictions, or commit fraud will result in all associated accounts being suspended.</p>
+                    <p class="mt-2 font-semibold text-slate-800">2.5 Right to Refuse or Terminate Accounts</p>
+                    <p>Hamars Ride reserves the right to refuse service, suspend, or terminate any account at our sole discretion—including for fraudulent activity, abusive behavior toward riders or our team, repeated chargebacks, or violation of these terms.</p>
+                </div>
+
+                <div>
+                    <h4 class="font-bold text-slate-900 uppercase tracking-wider text-[10px] mb-2">3. Operating Hours</h4>
+                    <p class="font-semibold text-slate-800">3.1 Service Hours</p>
+                    <p>Hamars Ride operates within the following hours: <br><strong class="text-slate-800">Daily: 08:00 - 21:00</strong><br>Orders cannot be placed outside these hours. The platform will display the next opening time when closed.</p>
+                    <p class="mt-2 font-semibold text-slate-800">3.2 Order Cutoff</p>
+                    <p>New orders are accepted until 20:30 daily to allow riders adequate time to complete deliveries before close of business. Between 20:30 and 21:00, the platform displays menus and information but does not accept new orders.</p>
+                    <p class="mt-2 font-semibold text-slate-800">3.3 Operating Hours May Change</p>
+                    <p>Hamars Ride reserves the right to modify operating hours at any time, including for public holidays, special events, or unforeseen circumstances. Updated hours will be reflected on the platform.</p>
+                </div>
+
+                <div>
+                    <h4 class="font-bold text-slate-900 uppercase tracking-wider text-[10px] mb-2">4. Placing and Fulfilling Orders</h4>
+                    <p class="font-semibold text-slate-800">4.1 Service Availability</p>
+                    <p>All services depend on rider availability, vendor availability, and the city you are ordering in. Hamars Ride does not guarantee that any specific service will be available at all times.</p>
+                    <p class="mt-2 font-semibold text-slate-800">4.2 Order Acceptance</p>
+                    <p>Placing an order on the platform constitutes a request for service. The order is only considered confirmed once payment has been received and verified by our team, and a rider has accepted the assignment. Hamars Ride reserves the right to decline any order at our discretion, including but not limited to: insufficient rider availability, prohibited items, suspicious activity, or unreachable delivery addresses.</p>
+                    <p class="mt-2 font-semibold text-slate-800">4.3 Pricing</p>
+                    <ul class="list-disc pl-4 space-y-1">
+                        <li>Food orders: prices are based on the partner restaurant's listed items, plus the applicable delivery fee.</li>
+                        <li>Parcel orders: delivery fees are calculated based on distance, parcel size, and item value. Fragile or high-value parcels are subject to a higher delivery fee to reflect priority handling.</li>
+                    </ul>
+                    <p class="mt-1">The total amount payable will be clearly displayed before payment is required.</p>
+                    <p class="mt-2 font-semibold text-slate-800">4.4 Accurate Delivery Information</p>
+                    <p>You are responsible for providing accurate delivery addresses, contact numbers, and item descriptions. Hamars Ride is not liable for failed deliveries, additional charges, or losses resulting from inaccurate information provided by you.</p>
+                    <p class="mt-2 font-semibold text-slate-800">4.5 Receiving Your Order</p>
+                    <p>You or your designated recipient must be available to receive the order at the provided address. If the rider is unable to deliver due to your unavailability or unreachable contact, you may be charged a return-trip fee, and Hamars Ride is not liable for spoiled or damaged goods resulting from a failed delivery attempt.</p>
+                    <p class="mt-2 font-semibold text-slate-800">4.6 Order Modifications</p>
+                    <p>Once an order is confirmed, modifications (changes to items, addresses, or delivery times) cannot be guaranteed and may incur additional charges. To request a modification, contact our team immediately—modifications may only be accepted before a rider has picked up the order.</p>
+                </div>
+
+                <div>
+                    <h4 class="font-bold text-slate-900 uppercase tracking-wider text-[10px] mb-2">5. Payments</h4>
+                    <p class="font-semibold text-slate-800">5.1 Accepted Payment Methods</p>
+                    <p>At this version of the platform, payments are accepted via bank transfer. The Hamars Ride account details and a unique order reference will be displayed on the checkout page. Customers must transfer the exact amount and enter the transfer reference on the platform to enable confirmation. Additional payment methods—including card payments and USSD—will be introduced in subsequent phases of the platform.</p>
+                    <p class="mt-2 font-semibold text-slate-800">5.2 Payment Confirmation</p>
+                    <p>Once you have transferred and submitted your reference, our team will verify the payment against the Hamars Ride account. We aim to confirm payments within 15 minutes during operating hours. Your order will not be assigned to a rider until payment has been confirmed.</p>
+                    <p class="mt-2 font-semibold text-slate-800">5.3 Customer Responsibility</p>
+                    <p>Customers are responsible for ensuring that:</p>
+                    <ul class="list-disc pl-4 space-y-1">
+                        <li>The transfer is made to the correct Hamars Ride account as displayed at checkout</li>
+                        <li>The exact amount displayed is transferred—partial or excess payments will delay confirmation</li>
+                        <li>The order reference is correctly entered into the platform after payment</li>
+                        <li>The transfer is initiated within 30 minutes of placing the order—orders awaiting payment beyond this window may be automatically cancelled</li>
+                    </ul>
+                    <p class="mt-2 font-semibold text-slate-800">5.4 Failed or Disputed Payments</p>
+                    <p>Where a customer claims a transfer has been made but the corresponding amount cannot be located in the Hamars Ride account, the order will remain unconfirmed until evidence is provided and verified. Hamars Ride is not liable for transfers made to incorrect account numbers or for transfers made outside the platform's verified accounts.</p>
+                    <p class="mt-2 font-semibold text-slate-800">5.5 Forwarding of Payments to Partners</p>
+                    <p>Where an order involves a partner restaurant or vendor, payment is collected by Hamars Ride and forwarded to the relevant partner according to our internal settlement schedule. Customers are not party to the financial arrangement between Hamars Ride and its partners.</p>
+                </div>
+
+                <div>
+                    <h4 class="font-bold text-slate-900 uppercase tracking-wider text-[10px] mb-2">6. Cancellations and Refunds</h4>
+                    <p class="font-semibold text-slate-800">6.1 Customer Cancellations</p>
+                    <ul class="list-disc pl-4 space-y-1">
+                        <li>Before payment confirmation: you may cancel the order at no cost. No refund is needed as no payment has been verified.</li>
+                        <li>After payment confirmation but before a rider has been assigned: full refund will be processed within 3-7 working days.</li>
+                        <li>After a rider has been assigned but before pickup: a partial refund may be issued, less any compensation owed to the rider for time spent. The exact amount will be communicated at the point of cancellation.</li>
+                        <li>After pickup has occurred: orders cannot be cancelled. If the order is no longer required, you remain liable for the full cost.</li>
+                    </ul>
+                    <p class="mt-2 font-semibold text-slate-800">6.2 Hamars Ride Cancellations</p>
+                    <p>We reserve the right to cancel an order at any time—including for reasons of unavailability, restricted items, suspected fraud, or operational issues. Where Hamars Ride cancels an order through no fault of yours, you will receive a full refund.</p>
+                    <p class="mt-2 font-semibold text-slate-800">6.3 Refund Processing Time</p>
+                    <p>Approved refunds are processed manually via bank transfer to the originating account and may take 3-7 working days to reflect, depending on your bank. Hamars Ride is not responsible for delays caused by third-party banks.</p>
+                    <p class="mt-2 font-semibold text-slate-800">6.4 Disputes</p>
+                    <p>Any disputes regarding orders, payments, or refunds must be raised within 48 hours of the relevant order by contacting our customer service team. Disputes raised outside this window may not be considered.</p>
+                </div>
+
+                <div>
+                    <h4 class="font-bold text-slate-900 uppercase tracking-wider text-[10px] mb-2">7. Customer Conduct</h4>
+                    <p class="font-semibold text-slate-800">7.1 Respectful Behavior</p>
+                    <p>You agree to treat Hamars Ride staff, riders, and partner vendors with respect at all times. Abuse, harassment, threats, or discriminatory behavior—verbal, written, or physical—will result in immediate account suspension and may be reported to law enforcement.</p>
+                    <p class="mt-2 font-semibold text-slate-800">7.2 Prohibited Use</p>
+                    <p>You agree not to use the platform for: Illegal activities, fraudulent orders, stalking riders, reselling services, or attempting unauthorized system access.</p>
+                    <p class="mt-2 font-semibold text-slate-800">7.3 Prohibited Items</p>
+                    <p>The following items may not be ordered for delivery through Hamars Ride: Illegal drugs/controlled substances, firearms/weapons, hazardous/flammable materials, live animals, human remains, counterfeit goods, or items prohibited by Nigerian law. Attempting to send these will result in an immediate ban.</p>
+                    <p class="mt-2 font-semibold text-slate-800">7.4 Misuse of the Platform</p>
+                    <p>Submitting fake orders or causing repeated failed deliveries through bad-faith behavior will result in account suspension.</p>
+                </div>
+
+                <div>
+                    <h4 class="font-bold text-slate-900 uppercase tracking-wider text-[10px] mb-2">8. Customer Communication</h4>
+                    <p>Rider contact information is displayed strictly for active delivery coordination. You agree not to save details for non-platform purposes, contact them post-delivery, or solicit them off-platform. Support conversations with our team may be recorded for quality assurance and dispute resolution.</p>
+                </div>
+
+                <div>
+                    <h4 class="font-bold text-slate-900 uppercase tracking-wider text-[10px] mb-2">9. Ratings, Reviews, and Feedback</h4>
+                    <p>You agree to provide honest, fair feedback. Reviews must not contain personal information of riders, defamatory remarks, or abusive language. Hamars Ride reserves the right to clear non-compliant reviews.</p>
+                </div>
+
+                <div>
+                    <h4 class="font-bold text-slate-900 uppercase tracking-wider text-[10px] mb-2">10. Liability and Disclaimers</h4>
+                    <p class="font-semibold text-slate-800">10.1 Best-Effort Service</p>
+                    <p>Estimated delivery times are updates, not structural guarantees. Delays may occur due to traffic, weather, or vendor preparation speeds.</p>
+                    <p class="mt-2 font-semibold text-slate-800">10.2 Food Quality</p>
+                    <p>Food prep, quality, and packaging are the sole responsibility of the partner restaurant. Hamars Ride is responsible only for safe transport once collected.</p>
+                    <p class="mt-2 font-semibold text-slate-800">10.3 Parcel Liability</p>
+                    <p>For parcel deliveries, Hamars Ride's liability for lost or damaged items is limited to the declared value of the item, up to a maximum of <strong class="text-slate-900">50,000 NGN per parcel</strong>—unless prior written arrangement for higher-value insurance has been agreed.</p>
+                    <p class="mt-2 font-semibold text-slate-800">10.4 General Limit of Liability</p>
+                    <p>To the maximum extent permitted by law, our total liability shall not exceed the specific amount paid by the customer for that given order sequence.</p>
+                </div>
+
+                <div>
+                    <h4 class="font-bold text-slate-900 uppercase tracking-wider text-[10px] mb-2">11. Personal Data, Changes, & Governing Law</h4>
+                    <p>Your use is subject to our Privacy Policy. Data is shared with riders strictly to fulfill delivery. These terms are governed by the laws of the Federal Republic of Nigeria. Disputes are subject to the exclusive jurisdiction of the Nigerian courts.</p>
+                </div>
+                
+                <p class="text-[10px] italic text-slate-400 border-t pt-4">This document should be reviewed by Hamars Ride's legal advisor before being made publicly binding. As additional operational services scale online, this text matrix will scale to encompass them.</p>
+            </div>
+
+            <!-- Action Tray -->
+            <div class="p-4 border-t bg-slate-50 flex justify-end">
+                <button onclick="toggleTermsModal(false)" class="bg-[#1e293b] text-white text-xs font-bold uppercase tracking-widest px-6 py-3 rounded-xl hover:bg-slate-800 transition">Acknowledge & Close</button>
+            </div>
+        </div>
+    </div>
+
+    <script>
+    function toggleTermsModal(show) {
+        const modal = document.getElementById('terms-modal');
+        if (!modal) return;
+        if (show) {
+            modal.style.display = 'flex';
+            modal.classList.remove('hidden');
+            document.body.style.overflow = 'hidden';
+        } else {
+            modal.style.display = 'none';
+            modal.classList.add('hidden');
+            document.body.style.overflow = '';
+        }
+    }
+    </script>
 </body>
 </html>
